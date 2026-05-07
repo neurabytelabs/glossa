@@ -2,7 +2,13 @@
 
 from pathlib import Path
 
-from glossa.config import GlossaConfig, load_hashes, save_hashes
+from glossa.config import (
+    GlossaConfig,
+    load_hashes,
+    load_source_ids,
+    save_hashes,
+    save_source_ids,
+)
 
 
 def test_config_round_trip(tmp_path: Path) -> None:
@@ -31,3 +37,13 @@ def test_hashes_round_trip(tmp_path: Path) -> None:
 
 def test_hashes_missing_returns_empty(tmp_path: Path) -> None:
     assert load_hashes(tmp_path) == {}
+
+
+def test_source_ids_round_trip(tmp_path: Path) -> None:
+    save_source_ids(tmp_path, {"foo.md": "src-uuid-1", "bar.md": "src-uuid-2"})
+    loaded = load_source_ids(tmp_path)
+    assert loaded == {"foo.md": "src-uuid-1", "bar.md": "src-uuid-2"}
+
+
+def test_source_ids_missing_returns_empty(tmp_path: Path) -> None:
+    assert load_source_ids(tmp_path) == {}

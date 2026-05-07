@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "glossa-lm"
-version = "0.1.0"
+version = "0.1.1"
 description = "Marginalia for the AI age — source-grounded answers with citations, $0 cost. Powered by NotebookLM."
 readme = "README.md"
 license = "MIT"

@@ -10,6 +10,7 @@ from pathlib import Path
 CONFIG_DIR = ".glossa"
 CONFIG_FILE = "config.json"
 HASHES_FILE = "source_hashes.json"
+IDS_FILE = "source_ids.json"
 
 
 @dataclass
@@ -52,3 +53,20 @@ def save_hashes(project_root: Path, hashes: dict[str, str]) -> None:
     p = hashes_path(project_root)
     p.parent.mkdir(exist_ok=True)
     p.write_text(json.dumps(hashes, indent=2, sort_keys=True))
+
+
+def ids_path(project_root: Path) -> Path:
+    return project_root / CONFIG_DIR / IDS_FILE
+
+
+def load_source_ids(project_root: Path) -> dict[str, str]:
+    p = ids_path(project_root)
+    if not p.exists():
+        return {}
+    return json.loads(p.read_text())
+
+
+def save_source_ids(project_root: Path, source_ids: dict[str, str]) -> None:
+    p = ids_path(project_root)
+    p.parent.mkdir(exist_ok=True)
+    p.write_text(json.dumps(source_ids, indent=2, sort_keys=True))
