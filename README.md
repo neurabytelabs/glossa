@@ -90,7 +90,7 @@ glossa ask "..." --show-sources   # print citations alongside the answer
 
 ## Limitations (be honest)
 
-- **Setup is not instant.** Each source takes 30s–10min to index in NotebookLM.
+- **Setup is not instant.** Each source takes 30s–10min to index in NotebookLM. `glossa notebook init` blocks until every source is indexed (default 300s per source); on timeout it raises and you can resume with `glossa notebook sync`.
 - **No streaming.** NotebookLM's chat is sync.
 - **No system prompts, no temperature, no max_tokens.** You get what NotebookLM gives.
 - **Auth is browser-based OAuth** (`notebooklm login`). Sessions can expire; re-login required.
