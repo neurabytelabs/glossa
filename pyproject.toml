@@ -1,0 +1,55 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "glossa-lm"
+version = "0.1.0"
+description = "Marginalia for the AI age — source-grounded answers with citations, $0 cost. Powered by NotebookLM."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [
+    { name = "Mustafa Saraç", email = "mustafa@neurabytelabs.com" },
+]
+keywords = ["notebooklm", "rag", "llm", "citations", "ai", "marginalia"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "click>=8.1",
+    "rich>=13.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "ruff>=0.4",
+]
+
+[project.scripts]
+glossa = "glossa.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/neurabytelabs/glossa"
+Repository = "https://github.com/neurabytelabs/glossa"
+Issues = "https://github.com/neurabytelabs/glossa/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["glossa"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
