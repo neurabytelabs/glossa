@@ -5,7 +5,7 @@ Glossa is an alpha command-line interface for asking questions against NotebookL
 Glossa is a thin, opinionated CLI on top of [NotebookLM](https://notebooklm.google.com). You feed it your documents once, then ask questions; it answers with citations back to the source. No per-token billing, no model selection, no prompt engineering — just **glossa**: marginal commentary anchored to authoritative text.
 
 ```bash
-pip install glossa-lm
+pip install git+https://github.com/neurabytelabs/glossa
 glossa notebook init ./docs ./README.md
 glossa ask "What does the project do?"
 ```
@@ -28,8 +28,10 @@ Glossa (the tool) is the CLI that makes this practice programmatic and project-s
 
 ## Install
 
+Not on PyPI yet.
+
 ```bash
-pip install glossa-lm
+pip install git+https://github.com/neurabytelabs/glossa
 ```
 
 You also need [`notebooklm-py`](https://github.com/teng-lin/notebooklm-py) installed and authenticated:
