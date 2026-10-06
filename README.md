@@ -1,6 +1,6 @@
-# 🔖 Glossa
+# Glossa
 
-> **Marginalia for the AI age.** Source-grounded answers with citations — at zero per-token cost.
+Glossa is an alpha command-line interface for asking questions against NotebookLM. It wraps NotebookLM through the unofficial [`notebooklm-py`](https://github.com/teng-lin/notebooklm-py) library, returns answers with citations from the source documents, and adds no per-token billing of its own. It still depends on NotebookLM access and `notebooklm-py` authentication.
 
 Glossa is a thin, opinionated CLI on top of [NotebookLM](https://notebooklm.google.com). You feed it your documents once, then ask questions; it answers with citations back to the source. No per-token billing, no model selection, no prompt engineering — just **glossa**: marginal commentary anchored to authoritative text.
 
