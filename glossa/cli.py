@@ -15,7 +15,6 @@ from glossa.config import GlossaConfig
 from glossa.notebook import NotebookError, NotebookManager
 from glossa.provider import NotebookLMError, NotebookLMProvider
 
-
 console = Console()
 
 

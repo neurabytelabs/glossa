@@ -6,9 +6,9 @@ import hashlib
 import json
 import shutil
 import subprocess
+from collections.abc import Iterator
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Iterator
 
 from glossa.config import (
     GlossaConfig,
@@ -17,7 +17,6 @@ from glossa.config import (
     save_hashes,
     save_source_ids,
 )
-
 
 SOURCE_EXTENSIONS = {".md", ".txt", ".pdf", ".docx", ".rtf", ".html"}
 DEFAULT_INDEX_TIMEOUT = 300
