@@ -6,7 +6,6 @@ import json
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
 
-
 CONFIG_DIR = ".glossa"
 CONFIG_FILE = "config.json"
 HASHES_FILE = "source_hashes.json"

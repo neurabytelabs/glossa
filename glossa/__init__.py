@@ -3,4 +3,4 @@
 from glossa.provider import GlossaResponse, NotebookLMProvider
 
 __version__ = "0.1.1"
-__all__ = ["NotebookLMProvider", "GlossaResponse", "__version__"]
+__all__ = ["GlossaResponse", "NotebookLMProvider", "__version__"]
